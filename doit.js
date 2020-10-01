@@ -6,11 +6,12 @@ var createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 var ob = {};
 
-fs.createReadStream('sheet31.csv')
+fs.createReadStream('input.csv')
   .pipe(csv())
   .on('data', (row) => {
+    var created_at = row['created at'].substr(0,10)
 
-    var k = row.product + row.date + row.side;
+    var k = row.product + created_at + row.side;
     
     var size = parseFloat(row['size']);
     var price = parseFloat(row['price']);
@@ -33,7 +34,7 @@ fs.createReadStream('sheet31.csv')
       ob[k] = {
         product: row['product'],
         side: row['side'],
-        date: row['date'],
+        date: created_at,
         size: size,
         'size unit': row['size unit'],
         price: price,

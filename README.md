@@ -14,8 +14,8 @@ Pavan Katepalli
 	* note: sometimes this takes around 30 minutes 
 2. clone this repository onto your machine
 3. move the csv into the repository folder
-4. change sheet31.csv to the name of your csv 
-	* `fs.createReadStream('sheet31.csv')` 
+4. change input.csv to the name of your csv 
+	* `fs.createReadStream('input.csv')` 
 5. open up this repository into your cmd line or gitbash
 6. run ``npm install``
 7. run ``node doit.js``
